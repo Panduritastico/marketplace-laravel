@@ -16,3 +16,5 @@ A continuación, estos son los comandos más comunes usados en github:
 - git checkout -b nombreRama -t origin/ramaACopiar // Lo mismo de arriba, pero el "-t" y demás indica que la rama creada se basará en otra, o sea, tendrá los mismos cambios que la rama indicada luego de "-t"
 - git stash // Todo lo que tengamos guardado en "git add" se almacenará localmente. Es como un "CTRL + X"
 - git stash pop // Todo lo "cortado" se pega directamente en la rama donde nos encontremos
+
+...
