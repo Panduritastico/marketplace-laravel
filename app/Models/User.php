@@ -46,4 +46,13 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    //Una orden solo pertenece a 1 USUARIO a la vez
+    //1 USUARIO puede tener varias ORDENES
+    //Uno a muchos
+    public function orders()
+    {
+        //pertenece a varias ordenes
+        return $this->hasMany(Order::class);
+    }
 }
