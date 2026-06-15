@@ -35,13 +35,6 @@ class ProductController extends Controller
             return response()->json([
                 'message' => $e->getMessage(),
             ], 400);
-        
-        } catch (\Exception $e) {
-
-            //Manejo de errores
-            return response()->json([
-                'message' => $e->getMessage(),
-            ], 400);
 
         }
     }
@@ -123,11 +116,19 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        $result = $this->productService->destroy($id);
-
+        
+    try {$result = $this->productService->destroy($id);
         return response()->json(
             $result,
             200
         );
+        } catch (\Exception $e) {
+
+            //Manejo de errores
+            return response()->json([
+                'message' => $e->getMessage(),
+            ], 400);
+
+        }
     }
 }

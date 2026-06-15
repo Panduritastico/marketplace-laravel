@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->integer('serie');
             $table->integer('correlative');
-            $table->boolean('estado');
-            $table->decimal('total', 2);
+            $table->decimal('total', 10, 2);
+            $table->string('status')->default('pending');
             $table->foreignId('user_id')
             ->constrained('users')
             ->cascadeOnDelete();

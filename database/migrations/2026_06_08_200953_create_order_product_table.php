@@ -22,6 +22,10 @@ return new class extends Migration
             ->constrained('orders')
             ->cascadeOnDelete();
 
+            $table->integer('quantity');
+
+            $table->decimal('subtotal', 10, 2);
+
 
             $table->unique(['order_id', 'product_id']);
 

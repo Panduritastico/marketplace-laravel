@@ -69,7 +69,7 @@ class ProductService
 
     public function update($id, array $data)
     {
-        $product = Product::findOrFail($id);
+        $product = Product::find($id);
 
         if (!$product) {
             throw new \Exception(
@@ -91,7 +91,13 @@ class ProductService
     
     public function destroy($id)
     {
-        $product = Product::findOrFail($id);
+        $product = Product::find($id);
+
+        if (!$product) {
+            throw new \Exception(
+                'Product not found'
+            );
+        }
 
         $product->delete();
 

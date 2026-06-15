@@ -19,7 +19,12 @@ class Product extends Model
     public function orders()
     {
         //pertenece a varias ordenes
-        return $this->belongsToMany(Order::class);
+        return $this->belongsToMany(Order::class)
+        ->withPivot([
+            'quantity',
+            'subtotal'
+        ])
+        ->withTimestamps();
     }
 
 }

@@ -10,8 +10,12 @@ class Order extends Model
         'user_id',
         'serie',
         'correlative',
-        'estado',
+        'status',
         'total'
+    ];
+
+    protected $hidden = [
+        'user_id'
     ];
 
     //Un usuario puede tener varias ordenes
@@ -29,6 +33,11 @@ class Order extends Model
     public function products()
     {
         //pertenece varios productos
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(Product::class)
+        ->withPivot([
+            'quantity',
+            'subtotal'
+        ])
+        ->withTimestamps();
     }
 }

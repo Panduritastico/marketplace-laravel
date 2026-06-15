@@ -21,6 +21,8 @@ Route::middleware('auth:sanctum')
         Route::apiResource('products', ProductController::class);
         Route::apiResource('orders', OrderController::class);
         
+        Route::get('/reports/top-products', [OrderController::class, 'topProducts']);
+        Route::get('/reports/users/{id}/orders', [OrderController::class, 'userOrders']);
     });
 
 // Route::get('/user', function (Request $request) {

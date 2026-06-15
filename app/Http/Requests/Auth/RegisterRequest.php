@@ -51,14 +51,14 @@ class RegisterRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'name.required' => 'El nombre es obligatorio',
-            'name.max' => 'Nombre muy largo',
-            'email.required' => 'El correo electrónico es obligatorio',
-            'email.email' => 'Formato de correo inválido',
-            'unique' => 'El correo electrónico ya está registrado',
-            'password.required' => 'La contraseña es obligatoria',
-            'password.min' => 'La contraseña debe tener al menos 8 caracteres',
-            'password.regex' => 'La contraseña debe contener al menos una letra mayúscula, una letra minúscula y un número',
+            'name.required' => 'The name is required',
+            'name.max' => 'The name is too long',
+            'email.required' => 'The email is required',
+            'email.email' => 'The email format is invalid',
+            'unique' => 'The email is already registered',
+            'password.required' => 'The password is required',
+            'password.min' => 'The password must be at least 8 characters',
+            'password.regex' => 'The password must contain at least one uppercase letter, one lowercase letter, and one number',
         ];
     }
 
