@@ -165,9 +165,9 @@ class OrderService
                 'id' => $user->id,
                 'name' => $user->name,
                 'email' => $user->email,
+                'orders' => $user->orders,
+                'accumulated_total' => $user->orders->sum('total')
             ],
-            'orders' => $user->orders,
-            'accumulated_total' => $user->orders->sum('total')
     ];
     }
 }
